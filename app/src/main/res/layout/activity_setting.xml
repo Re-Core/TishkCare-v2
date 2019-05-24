@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="12dp"
+    android:padding="12dp"
+    android:background="#fff"
+    android:scrollbars="vertical">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:background="@color/ripple_effect_background"
+            android:id="@+id/setting_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/settingImg"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/man"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/popupMail"
+            android:padding="6dp"
+            android:textSize="22sp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:hint="Mail"
+            android:background="@drawable/form_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/popupMobile"
+            android:padding="6dp"
+            android:textSize="22sp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:hint="Mobile"
+            android:background="@drawable/form_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/popUpEducation"
+            android:textSize="22sp"
+            android:padding="6dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:hint="Education"
+            android:background="@drawable/form_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/popupWork"
+            android:textSize="22sp"
+            android:padding="6dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:hint="Work"
+            android:background="@drawable/form_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/popupBirthday"
+            android:textSize="22sp"
+            android:padding="6dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:hint="Birthday"
+            android:background="@drawable/form_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:padding="6dp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:layout_marginRight="12dp"
+                android:background="@drawable/form_background"
+                android:hint="Blood group"
+                android:id="@+id/spinnerBloodGroup"
+                android:layout_width="140dp"
+                android:layout_height="62dp"/>
+
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/form_background"
+                android:hint="Gender"
+                android:id="@+id/spinnerGender"
+                android:layout_width="140dp"
+                android:layout_height="62dp"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="6dp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:layout_marginRight="12dp"
+                android:background="@drawable/form_background"
+                android:hint="Marriage"
+                android:id="@+id/spinnerMarriage"
+                android:layout_width="140dp"
+                android:layout_height="62dp"/>
+
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/form_background"
+                android:hint="City"
+                android:id="@+id/spinnerCity"
+                android:layout_width="140dp"
+                android:layout_height="62dp"/>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/popupBtnUpdateProfile"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:padding="12dp"
+            android:textAllCaps="false"
+            android:background="@drawable/form_button"
+            android:text="Update Profile"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

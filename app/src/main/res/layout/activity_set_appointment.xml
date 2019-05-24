@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/rootlay"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitys.Activtys.SetAppointmentActivity"
+    android:fillViewport="true">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:background="@color/colorPrimary"
+                android:id="@+id/toolbar"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <LinearLayout
+                android:id="@+id/userInfoContainer"
+                android:layout_below="@+id/toolbar"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/patientImg"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    app:civ_border_color="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/txtPatientName"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="name"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/medicalBackgroundContainer"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical"
+                android:layout_below="@id/userInfoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_margin="6dp"
+                    android:background="@drawable/form_background"
+                    android:hint="medical backGround"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:layout_margin="6dp"
+                    android:background="@drawable/form_background"
+                    android:hint="why you wanna come ?"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dateAndTimeContainer"
+                android:gravity="center_horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/medicalBackgroundContainer"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnDate"
+                    android:background="@drawable/card_address_container"
+                    android:text="date"
+                    android:textColor="@android:color/white"
+                    android:paddingRight="52dp"
+                    android:paddingLeft="52dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnTime"
+                    android:background="@drawable/card_speciality_container"
+                    android:text="time"
+                    android:textColor="@android:color/white"
+                    android:paddingRight="52dp"
+                    android:paddingLeft="52dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/dateAndTimeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/empty_calendar"
+                    android:id="@+id/generatedImg"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp" />
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            
+            <Button
+                android:id="@+id/reqAppointment"
+                android:layout_marginBottom="12dp"
+                android:padding="12dp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/card_social_container"
+                android:textAllCaps="false"
+                android:text="Set Appointment"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+</ScrollView>

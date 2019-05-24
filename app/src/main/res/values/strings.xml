@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tishk Care</string>
+
+
+    <string name="doctors_tab">DOCTORS</string>
+    <string name="appointment_tab">APPOINTMENT</string>
+    <string name="profile_tab">PROFILE</string>
+
+</resources>

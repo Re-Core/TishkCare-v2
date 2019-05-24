@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1055928259435",
+    "firebase_url": "https://healtcare-20c46.firebaseio.com",
+    "project_id": "healtcare-20c46",
+    "storage_bucket": "healtcare-20c46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055928259435:android:96bb23286869d761",
+        "android_client_info": {
+          "package_name": "com.recore.tishkcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055928259435-lj58t2mhbmudev81ltbpkbltp8au5mku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.recore.tishkcare",
+            "certificate_hash": "38c2101d6f1a1209edf1c57e9d196fc9bf568e21"
+          }
+        },
+        {
+          "client_id": "1055928259435-5piur17tofs56165i5gam8oevkhla8d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpaOrVqtbS7aDPK3MEhSwSTHhsI3zXswo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055928259435-5piur17tofs56165i5gam8oevkhla8d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
