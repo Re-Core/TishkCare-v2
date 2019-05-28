@@ -40,24 +40,34 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SetAppointmentActivity extends AppCompatActivity{
 
+    /**
+     * This class is the one that let you get an appointment
+     * It send the doctor information to the patient appointment
+     * and the patient information to the doctor app ( doctor appointment )
+     *
+     * */
+
+
+    //the flowing are the component we used
 
     String doctorId;
     String patientId;
     String doctorType;
-
+    //the firebase object
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference appointmentRef;
 
+    //our data about the doctor
     private String doctorName,doctorimg,doctorWork,doctorCity,doctorEducation,doctorSpecilty,
             doctorGender,doctorAge,doctorMail,doctorPhone;
-
+    //our data about the patient
     private String patientName,patientimg,patientWork,patientCity,patientEducation,patientBloodGroup,
             patientGender,patientAge,patientMail,patientPhone,patientMarriage;
 
     private Button btnAppointment;
-
+    //the appointment time and date
     private String appointmentDate;
     private String appointmentTime;
     private int dd,mm,yy,hh,mn;

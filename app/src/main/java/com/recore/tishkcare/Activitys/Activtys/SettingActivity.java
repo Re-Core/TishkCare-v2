@@ -255,11 +255,9 @@ public class SettingActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode== CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE&&resultCode==RESULT_OK&&data!=null){
-
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             imageUri =result.getUri();
             profileImg.setImageURI(imageUri);
-
 
         }else{
             showMessage("Error, try again");
@@ -270,6 +268,7 @@ public class SettingActivity extends AppCompatActivity {
 
     }
 
+    // a method that show us a toast great readability
     private void showMessage(String s) {
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
 
@@ -278,7 +277,6 @@ public class SettingActivity extends AppCompatActivity {
     private void updateOnlyUserInfo() {
 
         DatabaseReference databaseReference =FirebaseDatabase.getInstance().getReference().child("Patients");
-
         HashMap<String,Object>userMap= new HashMap<>();
         userMap. put("email", edtMail.getText().toString());
         userMap. put("phone", edtMobile.getText().toString());
@@ -305,7 +303,7 @@ public class SettingActivity extends AppCompatActivity {
         }
         else if (TextUtils.isEmpty(edtMobile.getText().toString()))
         {
-            Toast.makeText(this, "address is address.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "mobile is mandatory.", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(edtEducation.getText().toString()))
         {
@@ -314,11 +312,14 @@ public class SettingActivity extends AppCompatActivity {
         else if(checker.equals("clicked"))
         {
             uploadImage();
+        }else if(checker.equals("notClicked")){
+
         }
     }
 
     private void uploadImage()
     {
+        //create a dialog to show the image is being uploaded
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Update Profile");
         progressDialog.setMessage("Please wait, while we are updating your account information");
@@ -354,7 +355,6 @@ public class SettingActivity extends AppCompatActivity {
                                 myUrl = downloadUrl.toString();
 
                                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Patients");
-
                                 HashMap<String, Object> userMap = new HashMap<>();
                                 userMap. put("email", edtMail.getText().toString());
                                 userMap. put("phone", edtMobile.getText().toString());
@@ -450,16 +450,13 @@ public class SettingActivity extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         DatabaseReference patientRef =firebaseDatabase.getReference("Patients");
         currentUserId=mCurrentUser.getUid();
-
         patientRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChild(currentUserId)) {
                     currentPateint = dataSnapshot.child(currentUserId).getValue(Patient.class);
-
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 

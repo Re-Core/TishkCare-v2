@@ -33,6 +33,11 @@ import dmax.dialog.SpotsDialog;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+/**
+ * This class is responsable for the registration and login of a patient
+ * its connected to the Patients node in the Firebase database  it collect the minimum information about our patient
+ * */
+
 public class SignUpInActivity extends AppCompatActivity {
 
     private Button btnSignIn,btnRegister;
@@ -42,6 +47,7 @@ public class SignUpInActivity extends AppCompatActivity {
     private RelativeLayout rootLayout;
 
 
+    //this line change the font of our app
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -55,12 +61,14 @@ public class SignUpInActivity extends AppCompatActivity {
                 .Builder()
                 .setDefaultFontPath("fonts/Roboto-Regular.ttf")
                 .build());
+
         setContentView(R.layout.activity_sign_up_in);
 
-        //ini firebase
+        //initialize firebase
         mAuth=FirebaseAuth.getInstance();
         db=FirebaseDatabase.getInstance();
-        usersRef=db.getReference("Patients");//a refrence to users node in the database
+
+        usersRef=db.getReference("Patients");//a reference to users node in the database
 
 
 
@@ -68,13 +76,14 @@ public class SignUpInActivity extends AppCompatActivity {
         btnRegister=(Button)findViewById(R.id.btnRegister);
         rootLayout =(RelativeLayout)findViewById(R.id.root_layout);
 
+        //if user clicked register show register dialog
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showRegisterDialog();
             }
         });
-
+        //if user clicked sign in show sign in dialog
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +93,7 @@ public class SignUpInActivity extends AppCompatActivity {
 
     }
 
+    //this method is responsible  for showing the dialog and validate if all the field are entered or not
     private void showLogInDialog() {
 
         AlertDialog.Builder logInDialog =  new AlertDialog.Builder(this);
@@ -92,6 +102,7 @@ public class SignUpInActivity extends AppCompatActivity {
 
         LayoutInflater inflater = LayoutInflater.from(this);
 
+        //connect our dialog layout
         View loginLayout = inflater.inflate(R.layout.layout_login,null);
 
         final MaterialEditText edtEmail =(MaterialEditText)loginLayout.findViewById(R.id.edtEmail);
@@ -105,7 +116,7 @@ public class SignUpInActivity extends AppCompatActivity {
                 dialogInterface.dismiss();
                 btnSignIn.setEnabled(false);
 
-
+                //checking if the field are valid or not
                 if (TextUtils.isEmpty(edtEmail.getText().toString())){
                     Snackbar.make(rootLayout,"Please enter email address",Snackbar.LENGTH_LONG)
                             .show();
@@ -118,6 +129,7 @@ public class SignUpInActivity extends AppCompatActivity {
                     return;
                 }
 
+                //checking password if is valid and more than 6 char
                 if (edtPassword.getText().toString().length()<6){
                     Snackbar.make(rootLayout,"password is too short",Snackbar.LENGTH_LONG)
                             .show();
@@ -127,6 +139,7 @@ public class SignUpInActivity extends AppCompatActivity {
                 final Dialog waitingDialog = new SpotsDialog.Builder().setContext(SignUpInActivity.this).build();
                 waitingDialog.show();
 
+                //THIS ENABLE FIREBASE AUTHENTICATION
                 mAuth.signInWithEmailAndPassword(edtEmail.getText().toString(),edtPassword.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
@@ -161,6 +174,7 @@ public class SignUpInActivity extends AppCompatActivity {
 
     }
 
+    // checking if our user is already signed in or not if is signed in go to main activity
     @Override
     protected void onStart() {
         super.onStart();
@@ -173,8 +187,8 @@ public class SignUpInActivity extends AppCompatActivity {
     }
 
 
+    //this method is responsible for showing register  dialog
     private void showRegisterDialog() {
-
         AlertDialog.Builder registerDialog =  new AlertDialog.Builder(this);
         registerDialog.setTitle("REGISTER");
         registerDialog.setMessage("Please use email to register");
@@ -224,6 +238,7 @@ public class SignUpInActivity extends AppCompatActivity {
                     return;
                 }
 
+                //enable firebase and create new user account
                 mAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(),edtPassword.getText().toString())
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override

@@ -46,6 +46,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.ViewHolder
         viewHolder.doctorType.setText(mDoctorList.get(i).getSpeciality());
         viewHolder.doctorMail.setText(mDoctorList.get(i).getEmail());
         viewHolder.doctorSocial.setText(mDoctorList.get(i).getName());
+
         Glide.with(mContext).load(mDoctorList.get(i).getDoctorImg()).into(viewHolder.doctorImg);
 
 
@@ -55,6 +56,8 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.ViewHolder
     public int getItemCount() {
         return mDoctorList.size();
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -81,7 +84,6 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.ViewHolder
                     Intent i = new Intent(mContext, DoctorDetailActivity.class);
 
                     i.putExtra("doctorId",mDoctorList.get(position).getDoctorId());
-
                     i.putExtra("doctorImg",mDoctorList.get(position).getDoctorImg());
                     i.putExtra("name",mDoctorList.get(position).getName());
                     i.putExtra("mail",mDoctorList.get(position).getEmail());

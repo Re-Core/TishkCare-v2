@@ -18,6 +18,9 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+
+
+
 public class AppointmentDetailActivity extends AppCompatActivity {
 
     private CircleImageView imgDoctorProfile;
@@ -45,6 +48,7 @@ public class AppointmentDetailActivity extends AppCompatActivity {
         //Toast.makeText(this, appointmentId, Toast.LENGTH_SHORT).show();testing doc id
 
         mFirebaseDatabase=FirebaseDatabase.getInstance();
+
         mRef=mFirebaseDatabase.getReference("Appointments").child("PatientAppointments").child(patientId)
                 .child(appointmentId);
 
@@ -61,6 +65,8 @@ public class AppointmentDetailActivity extends AppCompatActivity {
         getAppointmentData();
 
     }
+
+    //this method load our appointment information and show it to our patient
     private void getAppointmentData(){
 
         mRef.addValueEventListener(new ValueEventListener() {

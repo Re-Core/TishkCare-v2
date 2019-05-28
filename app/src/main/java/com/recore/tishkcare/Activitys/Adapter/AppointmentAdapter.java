@@ -1,5 +1,11 @@
 package com.recore.tishkcare.Activitys.Adapter;
 
+
+/**
+ * This class is an adapter for appointments
+ * its job is to create appointment we have and bind the data to our view
+ * */
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;

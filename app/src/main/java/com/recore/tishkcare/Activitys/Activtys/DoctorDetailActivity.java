@@ -31,6 +31,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DoctorDetailActivity extends AppCompatActivity {
 
+
+    /**
+     * The information you see here are fetched from the doctorListAdapter
+     * */
     private String docName,docPhone,docMail,docLocation,specilty,doctorId,doctorImg,docGender,docWork;
     private TextView txtDocName,txtDocPhone,txtDocSpecialty,txtLocation,txtMail,txtGender,txtWork;
 

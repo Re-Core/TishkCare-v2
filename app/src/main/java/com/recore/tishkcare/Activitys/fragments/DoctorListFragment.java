@@ -43,7 +43,8 @@ public class DoctorListFragment extends Fragment {
             "Surgeon",
             "Psychiatrist",
             "dentist",
-            "Heart"
+            "Heart",
+            "eye"
     };
 
     public DoctorListFragment() {
@@ -90,23 +91,26 @@ public class DoctorListFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        //a change made here
+        //awhen a change happens in the node call this method
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
+            //when data change create a list and then add the info in that node to the list
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                //create a new list of type doctors
                 mDoctorList = new ArrayList<>();
 
                 for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
-
+                    //datasnapshot takes a snapshot of that node and create
+                    //doctor object
                     Doctor doctor =postSnapshot.getValue(Doctor.class);
                     mDoctorList.add(doctor);
 
 
                 }
-
+                //initilize the adapter
                 mDoctorAdapter = new DoctorAdapter(getActivity(),mDoctorList);
                 doctorRecycler.setAdapter(mDoctorAdapter);
+
 
             }
 

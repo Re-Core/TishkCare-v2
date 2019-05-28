@@ -22,7 +22,14 @@ import com.recore.tishkcare.R;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-
+/**
+ * This activity most important responsibility is to show the three
+ * tab of our app [ Doctor list , profile , appointment ]
+ * and it do that by using fragment
+ *
+ * fragment are reusable part of an app
+ *
+ * */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -45,16 +52,16 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(getColor(R.color.basePressColor));
 
+        //this object is responsible for creating and binding our 3 fragment
         SectionPagerAdapter adapter = new SectionPagerAdapter(getSupportFragmentManager());
 
-
+        //this enable the sliding between the tabs
         ViewPager pager =(ViewPager)findViewById(R.id.pager);
         TabLayout tabs = (TabLayout)findViewById(R.id.tabs);
 
         tabs.setupWithViewPager(pager);
         pager.setAdapter(adapter);
         tabs.setTabTextColors(ColorStateList.valueOf(getResources().getColor(R.color.basePressColor)));
-
 
     }
 
@@ -70,9 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    //view pager class
+    //view pager class the adapter class that tells how many page and what page are and have
     private class SectionPagerAdapter extends FragmentPagerAdapter{
-
 
         public SectionPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -97,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
 
+        //this method is responsible for displaying the name of our tabs
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
