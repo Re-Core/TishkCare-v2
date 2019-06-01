@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -66,6 +67,10 @@ public class SetAppointmentActivity extends AppCompatActivity{
     private String patientName,patientimg,patientWork,patientCity,patientEducation,patientBloodGroup,
             patientGender,patientAge,patientMail,patientPhone,patientMarriage;
 
+    private String medicalBackground,currentProblem;
+
+    private EditText edtMedicalBackground,edtCurrentProblem;
+
     private Button btnAppointment;
     //the appointment time and date
     private String appointmentDate;
@@ -102,6 +107,9 @@ public class SetAppointmentActivity extends AppCompatActivity{
 
         getDoctorDetails();
         getPatientDetails();
+
+        edtMedicalBackground=(EditText)findViewById(R.id.medicalBackgrount);
+        edtCurrentProblem=(EditText)findViewById(R.id.currentProblem) ;
 
         txtPatientName =(TextView)findViewById(R.id.txtPatientName);
         imgPatient=(CircleImageView)findViewById(R.id.patientImg);
@@ -201,6 +209,7 @@ public class SetAppointmentActivity extends AppCompatActivity{
                 startActivity(i);
             }
         });
+
 
 
 
@@ -354,6 +363,9 @@ public class SetAppointmentActivity extends AppCompatActivity{
         patientMap.put("patientId",patientId);
         patientMap.put("date",appointmentDate);
         patientMap.put("time",appointmentTime);
+
+        patientMap.put("medicalBackground",edtMedicalBackground.getText().toString());
+        patientMap.put("currentProblem",edtCurrentProblem.getText().toString());
 
         appointmentRef.child("DoctorAppointments").child(doctorId).child(patientId)
                 .updateChildren(patientMap);

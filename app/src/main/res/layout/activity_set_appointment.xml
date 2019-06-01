@@ -61,18 +61,20 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/medicalBackgrount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="6dp"
                     android:background="@drawable/form_background"
-                    android:hint="medical backGround"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:hint="medical backGround" />
 
                 <EditText
+                    android:id="@+id/currentProblem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="6dp"
                     android:background="@drawable/form_background"
-                    android:hint="why you wanna come ?"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:hint="why you wanna come ?" />
 
             </LinearLayout>
 

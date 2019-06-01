@@ -3,11 +3,11 @@ package com.recore.tishkcare.Activitys.Model;
 public class Doctor {
 
     private String email,password,name,phone, speciality,startHour,endHour,location,gender,doctorImg,doctorId,work;
-
+    private String openingHour;
     public Doctor() {
     }
 
-    public Doctor(String email, String password, String name, String phone, String speciality, String startHour, String endHour, String location, String gender, String doctorImg, String doctorId, String work) {
+    public Doctor(String email, String password, String name, String phone, String speciality, String startHour, String endHour, String location, String gender, String doctorImg, String doctorId, String work, String openingHour) {
         this.email = email;
         this.password = password;
         this.name = name;
@@ -20,39 +20,15 @@ public class Doctor {
         this.doctorImg = doctorImg;
         this.doctorId = doctorId;
         this.work = work;
+        this.openingHour = openingHour;
     }
 
-    public Doctor(String email, String password, String name, String phone, String specialty, String startHour, String endHour, String location, String gender, String doctorImg, String doctorId) {
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.phone = phone;
-        this.speciality = specialty;
-        this.startHour = startHour;
-        this.endHour = endHour;
-        this.location = location;
-        this.gender = gender;
-        this.doctorImg = doctorImg;
-        this.doctorId = doctorId;
+    public String getOpeningHour() {
+        return openingHour;
     }
 
-    public Doctor(String email, String password, String name, String phone, String specilty, String startHour, String endHour, String location, String gender) {
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.phone = phone;
-        this.speciality = specilty;
-        this.startHour = startHour;
-        this.endHour = endHour;
-        this.location = location;
-        this.gender=gender;
-    }
-
-    public Doctor(String email, String password, String name, String phone) {
-        this.email = email;
-        this.password = password;
-        this.name = name;
-        this.phone = phone;
+    public void setOpeningHour(String openingHour) {
+        this.openingHour = openingHour;
     }
 
     public String getEmail() {

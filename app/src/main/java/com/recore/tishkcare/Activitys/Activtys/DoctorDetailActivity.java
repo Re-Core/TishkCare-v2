@@ -35,8 +35,8 @@ public class DoctorDetailActivity extends AppCompatActivity {
     /**
      * The information you see here are fetched from the doctorListAdapter
      * */
-    private String docName,docPhone,docMail,docLocation,specilty,doctorId,doctorImg,docGender,docWork;
-    private TextView txtDocName,txtDocPhone,txtDocSpecialty,txtLocation,txtMail,txtGender,txtWork;
+    private String docName,docPhone,docMail,docLocation,specilty,doctorId,doctorImg,docGender,docWork,docOpeningHour;
+    private TextView txtDocName,txtDocPhone,txtDocSpecialty,txtLocation,txtMail,txtGender,txtWork,txtOpeningHour;
 
     private Button btnAppointment;
     private CircleImageView doctorImgC;
@@ -55,6 +55,8 @@ public class DoctorDetailActivity extends AppCompatActivity {
         docLocation= getIntent().getStringExtra("location");
         docGender=getIntent().getStringExtra("gender");
         docWork=getIntent().getStringExtra("address");
+        docOpeningHour=getIntent().getStringExtra("openingHour");
+
 
         doctorImgC=(CircleImageView)findViewById(R.id.docProfile);
 
@@ -65,6 +67,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
         txtMail=(TextView)findViewById(R.id.email);
         txtGender=(TextView)findViewById(R.id.gender);
         txtWork=(TextView)findViewById(R.id.occupation);
+        txtOpeningHour=(TextView)findViewById(R.id.txtDocOpeningHour);
         btnAppointment=(Button)findViewById(R.id.reqAppointment);
 
 
@@ -77,6 +80,7 @@ public class DoctorDetailActivity extends AppCompatActivity {
         txtMail.setText(docMail);
         txtGender.setText(docGender);
         txtWork.setText(docWork);
+        txtOpeningHour.setText(docOpeningHour);
 
         Toast.makeText(this, doctorId, Toast.LENGTH_SHORT).show();
 

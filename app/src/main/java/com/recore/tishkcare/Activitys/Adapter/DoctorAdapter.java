@@ -94,6 +94,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.ViewHolder
                     i.putExtra("endHour",mDoctorList.get(position).getEndHour());
                     i.putExtra("gender",mDoctorList.get(position).getGender());
                     i.putExtra("address",mDoctorList.get(position).getWork());
+                    i.putExtra("openingHour",mDoctorList.get(position).getOpeningHour());
 
 
 
